@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수행과제</title>
+</head>
+<body>
+    <script>
+        /*
+            JavaScript
+            정적 타입 언어 : 변수의 타입을 지정하고 변경이 불가능
+                String a;
+            동적 타입 언어 : 언어에 값을 보고 타입을 결정
+                let a = '5';  -> string
+                a = a*a;   -> a='5'*'5' -> 5*5 -> 25 [원래는 글자5*글자5 이기에 오류가 나야함]
+        */
+       const input1 = prompt('덧셈할 첫 숫자');
+       const input2 = prompt('덧셈할 둘째 숫자');
+       const num1 = +input1;
+       const num2 = +input2;
+       const plus = num1+num2;
+       document.write(`<p>${num1}+${num2}=${plus}</p>`);
+    </script>
+</body>
+</html>

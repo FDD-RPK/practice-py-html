@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 통합 2</title>
+    <div>
+        <img id="img"><br>
+        <button onclick="출력('reinhardt.jfif')">라인</button>
+        <button onclick="출력('life weaver.jfif')">라위</button>
+        <button onclick="출력('ramattra.jfif')">라마</button>
+    </div>
+</head>
+<body>
+    <script>
+        const file = 'img/';
+        const img = document.getElementById('img');
+        img.src=`${file}reinhardt.jfif`;
+        function 출력(photo) {
+            img.src = `${file}${photo}`;
+        }
+    </script>
+</body>
+</html>

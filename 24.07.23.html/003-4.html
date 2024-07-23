@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지에 화살표 만들기</title>
+    <style>
+        .nav {
+            background-color: rgba(0,0,0,0.3);
+            width: 40px;
+            border: 2px solid white;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 5px;
+            font-size: 30px;
+            color: white;
+        }
+        .nav {
+            position: absolute;
+        }
+        #rama {
+            width: 1000px;
+        }
+        #picture {
+            position: relative;
+            width: 1000px;
+            margin: 0 auto;
+            top: 200px;
+        }
+        #left {
+            left: 0;
+            top: 232px;
+        }
+        #right {
+            right: 0;
+            top: 232px;
+        }
+        .nav:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="picture">
+        <div class="nav" id="left">←</div>
+        <img src="img/ramattra.jfif" id="rama">
+        <div class="nav" id="right">→</div>
+    </div>
+</body>
+</html>

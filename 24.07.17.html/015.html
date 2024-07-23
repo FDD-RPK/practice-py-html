@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 증감연산자(++,--)가 단독으로 사용될 떄는 증감한다.
+        // 즉 전위, 후위가 동일
+
+        // 증감연산을 다른 연산과 함께 수행하면
+        // 전위는 증감부터, 후위는 증감을 나중에 한다
+        let a = 10;
+        let b = 10;
+        const x = a++;
+        const y = ++b;
+        console.log(`${a}:a, ${b}:b`); //11, 11
+        console.log(`${X}:x, ${y}:y`); // 10, 11
+        // const x = a++; : 후위이기에 a를 먼저 x에 대입하고 a가 증감한다. 즉 x=10, a=11
+        // const y = ++b; : 전위이기에 증감을 진행 후 b를 y에 대입한다. 즉 b=11, y=11
+    </script>
+</body>
+</html>

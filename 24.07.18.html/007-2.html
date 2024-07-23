@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 꾸미기</title>
+    <!-- 전체, 이미지, 뉴스, 쇼핑, 도서 항목을 사용하여 링크 버튼을 만드시오-->
+     <style>
+        body { 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height : 300px;
+            margin: 0;
+        }
+        * {margin:0;
+            padding:0;
+        }
+        li { display:inline-block;
+             background-color : white;
+             width: 60px;
+             text-align: center;
+             height: 30px;
+             line-height: 30px;
+             
+        }
+        a { display : block;
+            color : black;
+            text-decoration: none;
+        }
+        li:hover {background-color: white;
+                  font-weight : bold;
+                  text-decoration: underline;
+                  border: 3px double black;
+                  border-radius: 10px;
+
+        }
+     </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">전체</a></li>
+        <li><a href="#">이미지</a></li>
+        <li><a href="#">뉴스</a></li>
+        <li><a href="#">쇼핑</a></li>
+        <li><a href="#">도서</a></li>
+    </ul>
+</body>
+</html>

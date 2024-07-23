@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 설정 3-페이지 만들기2</title>
+    <style>
+        /* 요소들의 기본 마진이나 패딩을 날려버리자(reset)*/
+        /* 전체선택자(universal selector)-우선순위 0순위 */
+        * { margin:0;
+            padding:0;
+        } /*reset*/
+        ul { list-style: none;}
+        li {
+            display : inline-block;
+            background-color : cornflowerblue;
+            width : 80px;
+            text-align : center;
+            height : 30px ;
+            line-height: 30px ;
+            border : 3px solid skyblue;
+        }
+        a {
+            text-decoration: none;
+            color : white;
+            display : block;
+        }
+        li:hover {
+            background-color : blueviolet;
+            font-weight : bold;
+            text-decoration: underline;
+            border : 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Us</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</body>
+</html>

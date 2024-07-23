@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수행과제3</title>
+    <!-- 최저시급을 입력받아 월급과 연봉을 출력하시오
+     월급은 최저시급 * 209
+     올해의 최저시급 9860원-->
+</head>
+<body>
+    <script>
+        const mW = prompt('최저임금');
+        const LP = +mW;
+        const BASE_TIME = 209;
+        const Month_Of_Year = 12;
+        const Month = LP*BASE_TIME;
+        const Year = Month*Month_Of_Year;
+        document.write(`<p>최저 월급:${Month}원<br>최저 연봉:${Year}원<br>어차피 세금내야해 걱정마</p>`);
+    </script>
+</body>
+</html>

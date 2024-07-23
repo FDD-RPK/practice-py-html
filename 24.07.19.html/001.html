@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <style>
+        /* reset-웹브라우저가 기본적인 표준이 있으니 그것을 리셋시켜줘야함 */
+        * {/* CSS는 단위를 생략할 수 없다(px,%,em)-절대로 */
+            margin : 0;
+           padding : 0;
+           box-sizing: border-box; /* 박스사이즈 계산 방법 */
+           border-radius: 10px;}
+        /* 자식 선택자(child selector) 
+            --> nav>ul=nav의 자식 ul,  nav ul=nav의 자손 ul */
+        /* nav>li는 성립 불가(li가 nav바로 밑에 없음)
+           nav li는 성립 가능 = 자손 선택자, 하위선택자(descent selector) */
+        nav { background-color: #333; }
+           nav li { 
+            list-style : none;
+            display : inline-block;
+            background-color : #333;
+            margin-right : -6px;        
+            width : 80px;
+            height: 30px;
+            line-height: 30px;
+         }
+         nav a {display : block;
+                color : white;
+                text-decoration: none;
+                transition : background-color 0.5s ;
+            }
+        nav ul { text-align: center; }
+        nav a:hover { background-color: #575757;
+                      }
+
+    </style>
+</head>
+<body>
+    <nav> <!--[navigation]메뉴가 들어오는 영역-자체 디자인 존재 x-->
+        <ul>
+            <li><a href="#">홈</a></li>
+            <li><a href="#">소개</a></li>
+            <li><a href="#">서비스</a></li>
+            <li><a href="#">연락처</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

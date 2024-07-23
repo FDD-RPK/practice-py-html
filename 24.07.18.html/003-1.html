@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셀 병합</title>
+    <style>
+        table, td { border:1px solid black; border-collapse: collapse; width: 200px; }
+
+    </style>
+</head>
+<body>
+    <!-- 3행 3열 -->
+     <table>
+        <tbody>
+            <tr>
+                <td colspan="2">1</td> <!-- 셀을 2행 벙형으로 병합(다른 tr에서 해당 행 내용 삭제 안하면 이상하게 나옴) -->
+                <td rowspan="3">3</td> <!-- 셀을 3열 방향으로 병합(다른 tr에서 해당 열 내용 삭제 안하면 이상하게 나옴) -->
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                
+            </tr>
+        </tbody>
+     </table>
+</body>
+</html>

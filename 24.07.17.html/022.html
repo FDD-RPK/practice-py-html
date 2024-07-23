@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = 10;
+        {
+            //하위 영역을 만든다
+            let y = 20; // 하위 영역에 소속되어 있어 외부의 영향을 받지 않는다
+            var a = 30; // 하위 영역에 소속되어 있지만 외부의 영향을 받는다
+            b=30; // 이렇게 만들면 브라우저(웹)영역에다 박아버린다=ㅈ된다
+        }
+        console.log(a); // var이 외부영향을 받아 잘 출력됨
+        //console.log(y); // let이 외부영향을 받지 않아 출력 안됨
+        console.log(b); // 브라우저 영역의 소속이 되므로 나올수는 있으나 작업량에 따라 ㅈ될수도 있음
+    </script>
+</body>
+</html>

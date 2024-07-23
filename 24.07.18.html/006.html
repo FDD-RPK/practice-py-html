@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 설정 2-수평메뉴</title>
+        <style>
+            div { 
+                display: inline-block;  /* inline-block으로 안하면 너비지정이 되지 않음(일정한 너비 지정을 위해 이용)*/
+                width : 100px;
+                background-color: blueviolet ;
+                margin: -2px;
+                color: white;
+                text-align: center;
+                font-size: 0.8em;
+                height:35px;
+                line-height:35px;
+            }
+            div:hover {
+                background-color:violet;
+                font-weight : bold;
+            }
+        </style>
+</head>
+<body>
+    <!--
+        화면을 내가 원하는 위치에 배치하기 : inline-block, float, position, flex, grid.....
+        inline-block : 간단한 메뉴 제작하기
+    -->
+        <li>
+        <div>Home</div>
+        <div>Us</div>
+        <div>Link</div>
+        <div>About</div>
+        </li>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thead, tbody가있는 문서(표) 만들기</title>
+    <style>
+        table, td {border : 2px solid #AAA}
+        th {border : 2px solid #aaa;}
+        table, td, th {border-collapse : collapse;}
+        table {width:300px; margin: 0 auto;} /* 이거 ㅈㄴ 중요함 외워야해-margin -> 정렬 */
+        .first-row { width : 40%; }
+        .second-row { width : 30%; }
+        /*
+            선택자 : html 요소를 선택하는 방법                  우선순위
+            1. 태그(tag) 선택자 : 태그를 선택                      1 - 거의 사용 안함
+            2. 클래스(class) 선택자 : 여러개를 선택                10 - 가장 자주 사용함
+            3. 아이디(id) 선택자 : 1개를 선택                     100 - 특별한 상황에 사용함(클래스에 반하는 명령어를 걸때)
+        */
+    tfoot>tr:last-of-type{ color:blue; }
+    </style>
+</head>
+<body>
+    <!-- 강수량이 시간당 서울 150ml, 인천 130ml, 경기 200ml, 강원 150ml -->
+    <!-- 쉽게 작성하기 : table>tbody>tr*4>td*2 = table아래 tbody아래 4행 아래 2열 명령어 생성 --> 
+    <table>
+        <thead>
+            <tr>
+                <th class="first-row">지역</th>
+                <th class="second-row">강수량</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>서울</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td>인천</td>
+                <td>130</td>
+            </tr>
+            <tr>
+                <td>경기</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>강원</td>
+                <td>150</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>평균강수량</td>
+                <td>315</td>
+            </tr>
+        </tfoot>
+     </table>
+</body>
+</html>

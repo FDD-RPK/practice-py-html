@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수행과제 : 시간표 만들기</title>
+    <style>
+        tbody, td{ border :1px solid black;}
+        table, td{ width: 400px; margin: 0 auto;}
+        .first { width: 10%;}
+        .second { width: 20%;}
+        .third { width:20%;}
+        .forth { width:20%;}
+    </style>
+</head>
+<body>
+ <!-- 8열 10행 -->    
+ <table>
+    <thead>
+        <tr>
+            <th class="first">401호</th>
+            <th class="second">402호</th>
+            <th class="third">403호</th>
+            <th class="forth">404호</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="10">2024년 03월 IT 시간표</td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            
+            <td>401호</td>
+            <td colspan="1">402호</td>
+          
+            <td colspan="3">403호</td>
+           
+            <td colspan="2">404호</td>
+          
+        </tr>
+        <tr>
+            <td colspan="2">09:00~12:00</td>
+          
+            <td rowspan="6">공<br>사<br>중</td>
+            <td colsspan="2">PYTHON 기초</td>
+            
+            <td colspan="3", rowspan="2">네트워크 보안<br>실무자 양성</td>
+           
+            <td colspan="2">보충훈련 과정<br>(OS/네트워크)</td>
+          
+        </tr>
+        <tr>
+            <td colspan="2">12:30~15:30</td>
+            
+            <td colspan="1">JAVA</td>
+           
+            <td colspan="2">보충훈련 과정<br>언어계열</td>
+          
+        </tr>
+        <tr>
+            <td colspan="2">15:30~18:30</td>
+           
+            <td colspan="1">C언어</td>
+           
+            <td colspan="3", rowspan="2">가상화 시스템<br>엔지니어 실무자 양성</td>
+           
+            <td colspan="2">리눅스</td>
+           
+        </tr>
+        <tr>
+            <td colspan="2">19:00~20:00</td>
+         
+            <td colspan="1">PYTHON WEB</td>
+          
+            <td colspan="2">서버</td>
+         
+        </tr>
+    </tbody>
+ </table>
+</body>
+    </html>

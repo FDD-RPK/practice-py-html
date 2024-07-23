@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        div {width:100px; height : 100px; border : 1px solid black;}
+        #red {background-color: red;}
+        #green {background-color: green;}
+        #blue {background-color: blue;}
+        #target {position : absolute; left: 50px; top: 50px;}
+        /* absoulte는 부모 기준으로 움직인다. 부모가 없는경우(?) 왼쪽 상단끝을 기준으로 움직인다. */
+    </style>
+</head>
+<body>
+    <!--
+     float: 왼쪽, 오른쪽으로 이동. 기본값은 none
+     position : 임의의 위치에 이동. 기본값이 static.
+
+     -->
+     <div id="red">a</div>
+     <div id="target">b</div>
+     <div id="green">c</div>
+     <div id="blue">d</div>
+</body>
+</html>

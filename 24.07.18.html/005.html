@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 속성</title>
+    <style>
+        div { width: 100px; border:1px solid red; margin: 0 auto;}
+        span {width: 100px; border:1px solid blue;};
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <!-- html요소를 배치하는 방법 : block요소, inline 요소)<-- 둘다 씹 외워야함
+         block요소 : 한줄에 하나씩, 위에서 아래로 배치 - div [width 요소가 적용된 듯 보이지만 div적용 후 남은 
+                                                           좌,우 공백부분을 margin으로 가득찬 취급하여 자동적으로 다음 내용이 옆에 오지 못하게 한다.]
+         inline요소 : 내용만큼 차지 - span [width 요소가 적용되면 더이상 inline 이라 볼 수가 없다 -> span에는 width 적용 불가]
+         너비를 적용하려면 : display 속성을 inline-block으로 변경해야 한다
+    -->
+<div>A</div>
+<div>B</div>
+<span>aaaa</span>
+<span>bbb</span>
+</body>
+</html>

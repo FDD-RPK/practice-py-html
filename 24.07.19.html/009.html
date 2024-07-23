@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수행과제1</title>
+    <style>
+        * {margin:0;
+           padding:0;
+           box-sizing: border-box; }
+        #parent {
+            height : 200px;
+            width: 400px;
+            border: 1px solid red;
+            margin : 0 auto;
+            position:relative;
+
+        }
+        #parent p {
+            background-color: yellow;
+            text-align: center;
+            width : 150px;
+            position:absolute;
+            left : 100px;
+            top : 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <p>우리나라 ㅈ은나라</p>
+        <!-- p는 parent의 자식으로 설정되어 있다.
+             하지만 parent에 position을 걸지 않는다면
+             static상태가 되며 static상태의 parent는 부모가 아니게 되기에
+             paretn에 relative를 걸어주어 p가 부모와 함께 이동하도록 설정해주어야 한다-->
+    </div>
+    
+</body>
+</html>

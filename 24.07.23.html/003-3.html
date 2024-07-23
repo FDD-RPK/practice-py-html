@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 병합 4</title>
+    <!-- html entity(특수문자) -->
+    <style>
+        .nav {
+            background-color: rgba(0,0,0,0.2);
+            color : white;
+            font-size: 1.5em;
+            height: 50px;
+            width : 25px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 5px;
+        }
+        .nav {
+            position: absolute;
+        }
+        #parents {
+            position: relative;
+            width: 1000px;
+            margin: 0 auto;
+        }
+        #left {
+            left:0px;
+            top:150px;
+        }
+        #right {
+            right:0px;
+            bottom:150px;
+        }
+        .nav:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        임의의 위치로 이동 : position 속성
+        부모 : relative
+        이동할 요소 : absolute -->
+    <div id="parents">
+        <div class="nav" id="left">&lt;</div>
+        <img src="https://www.w3schools.com/howto/img_nature_wide.jpg">
+        <div class="nav" id="right">&gt;</div>
+    </div>
+</body>
+</html>

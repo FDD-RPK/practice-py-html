@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float의 특징</title>
+    <style>
+        #inline-block div, #float div {width : 100px; height : 100px;}
+        #inline-block div { 
+            background-color: red;
+            display : inline-block;
+        }
+        #float div {
+            background-color: blue;
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <div id="inline-block">
+        <div></div>
+        <div></div>
+    </div>
+    <div id="float" style="overflow:hidden";>
+        <div></div>
+        <div></div>
+    </div>
+    <p>alsdjflasjdfasjdfjasljdfjasldkfjaslkjdflkajsdjasjdfalsjdklasdmfkalsmdf</p>
+    <!--3차원 적인 생각으로 float은 공중에 띄워진 취급을 하기 때문에
+        P문장이 본래 수직으로 배치되어야 하지만 수평으로 올라와 버린다-->
+    <!--
+        부모의 높이는 자식을 포함할 수 있을 만큼 계산됨=inline
+        float 되면 요소가 공중에 뜬다
+        그래서 부모의 높이는 float된 자식의 높이를 반영 x -> 0
+        자식의 높이가 부모에 반영되게 만들어야 한다 -> ★float을 claer한다-클리어 가능한 방법 수 꼭 다 알기★
+        
+        부모에서 ☆overflower:hidden☆-부모가 있어야지만 클리어 가능;
+        -->
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 연습 6</title>
+    <!-- 버튼 하나만 사용해서 점등 소등 버튼 만들기
+         불이 켜진 전구 : https://www.w3schools.com/js/pic_bulbon.gif
+         불이 꺼진 전구 : https://www.w3schools.com/js/pic_bulboff.gif -->
+         <h1>전등 ON/OFF</h1>
+         <img src="https://www.w3schools.com/js/pic_bulboff.gif" id="img">
+         <button onclick="toggle()">toggle</button>
+    
+</head>
+<body>
+    <script>
+        // 현재 상태
+        let isSwitchOn = false;
+        const img = document.getElementById('img');
+        function toggle() {
+            
+            if(isSwitchOn==true) {
+                // isSwitchOn = false;
+                img.src = 'https://www.w3schools.com/js/pic_bulboff.gif';
+            } else {
+                // isSwitchOn = true;
+                img.src = 'https://www.w3schools.com/js/pic_bulbon.gif';
+            }
+            isSwitchOn = !isSwitchOn;
+        }
+    </script>
+</body>
+</html>

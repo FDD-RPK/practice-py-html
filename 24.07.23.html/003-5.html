@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <!-- 배열은 값들에 인덱스를 준다 -->
+    <style>
+        .nav {
+            background-color: rgba(0,0,0,0.2);
+            color : white;
+            font-size: 1.5em;
+            height: 50px;
+            width : 25px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 5px;
+        }
+        .nav {
+            position: absolute;
+        }
+        #parents {
+            position: relative;
+            width: 1000px;
+            margin: 0 auto;
+        }
+        #left {
+            left:0px;
+            top:150px;
+        }
+        #right {
+            right:0px;
+            bottom:150px;
+        }
+        .nav:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="parents">
+        <div class="nav" id="left" onclick="left()">&lt;</div>
+        <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" id="img">
+        <div class="nav" id="right" onclick="right()">&gt;</div>
+    </div>
+    <script>
+        /*
+        let i = 0;
+        const ar=['hello', '안녕', 'こんばんは'];
+        console.log(ar[i++]);
+        console.log(ar[i++]);
+        console.log(ar[i++]);
+        */
+        let index = 0;
+        const photos = ['img_nature_wide.jpg',
+                       'img_snow_wide.jpg',
+                       'img_lights_wide.jpg',
+                       'img_mountains_wide.jpg'
+                    ];
+        const img = document.getElementById('img');
+       
+        function left() {
+            index--;
+            if (index<0) {
+                index=3;
+            }
+            img.src = `https://www.w3schools.com/howto/${photos[index]}`;
+        };
+
+        function right() {
+            index++;
+            if (index>3) {
+                index=0;
+            }
+        };
+        
+
+    </script>
+</body>
+</html>

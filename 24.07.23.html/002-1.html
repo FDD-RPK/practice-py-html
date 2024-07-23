@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 사용 2</title>
+</head>
+<body>
+    <h1>제곱계산기</h1>
+    <div>
+        <input type="text" id="num" value>
+        <button onclick="calculate()">제곱계산</button>
+        <p>결과:<span id="result"></span></p>
+    </div>
+    <script>
+      // 함수 정의 -> 실행과는 별개의 개념
+      function calculate() {
+        const input = document.getElementById('num');
+        const span = document.getElementById('result');
+        const num =+input.value;
+        const result = num*num;
+        span.innerHTML=result;
+     };
+      // 함수를 지정할때는 반드시 괄호'()'를 넣어야 한다
+      // calculate()
+      // ↑ 함수 호출
+    </script>
+</body>
+</html>

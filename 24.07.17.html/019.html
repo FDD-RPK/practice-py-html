@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const num = 456;
+        //변수의 값 중 백의 자리 이하를 버린 값을 출력하시오
+        // ex) 456이면 400, 111이면 100을 출력
+       /* document.write(Math.floor(456/100)*100);
+        document.write('<br>');
+        document.write(Math.floor(111/100)*100);
+        document.write('<br>');
+        document.write(Math.floor(num/100)*100);*/
+
+        const m = prompt('당신의 모근 수. 백단위 날려버림');
+        document.write(Math.floor(m/1000)*1000);
+    </script>
+</body>
+</html>

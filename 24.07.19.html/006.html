@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin : 0; 
+            padding : 0;
+            box-sizing: border-box;
+            text-align: center; 
+            }
+        #app { width : 800px; margin : 0 auto; }
+        header, nav, footer { display: flex;
+                              justify-content : center;
+                              align-items: center;
+                              height : 50px; border : 0.5px solid red; 
+                              align : center;}
+        aside { display: flex;
+                  justify-content : center;
+                  align-items: center;
+                width : 100px; 
+                min-height : 100px; /* min height=정확하게 높이를 모르는 경우 최소?이상으로 지정
+                                        왼쪽의 경우 최소 100px이상임을 의미 */
+                background-color: lightblue; 
+                float : left;
+                border : 1px solid gray; }
+        section { display: flex;
+                  justify-content : center;
+                  align-items: center;
+                  width:600px; height:600px; background-color: aqua;
+                  float:left; 
+                  border: 1px solid green;}
+        main {overflow : hidden; }
+        
+    </style>
+</head>
+<body>
+    <!--
+        영역을 분할하는 태그 : idv
+        새로운 영역 태그 : header, footer, nav, main ,aside, section, article
+        (↑시맨틱 태그) -> 시맨틱 마크업
+        -->
+       <div id="app">
+        <header>
+            인천일보아카데미
+        </header>
+        <nav>메인 메뉴</nav>
+        <main>
+            <aside>!왼쪽!</aside> <!--부목(?) : 사이드에 있는 추가 정보-->
+            <section>모르는 내용</section> <!--본문 : section or article을 이용하여 작성-->
+            <aside>!오른쪽!</aside> <!--부목(?) : 사이드에 있는 추가 정보-->
+        </main>
+        <footer>coptyright &copy;2024 ICIA</footer>
+       </div>
+    </body>
+</html>

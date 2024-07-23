@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 사용 3</title>
+    <!-- 임금을 입력하면 월 급여를 출력하시오(시간은 최저) -->
+    <input type="text" id="price">
+    <button onclick="월급()">월급 계산</button>
+    <p>결과:<span id='result'></span></p>
+</head>
+<body>
+<div>
+    <script>
+        function 월급() {
+        const input = document.getElementById('price');
+        const span = document.getElementById('result');
+        const price = +input.value;
+        const result = price*209+'원';
+        span.innerHTML = result;
+    }
+    </script>
+</div>
+</body>
+</html>
