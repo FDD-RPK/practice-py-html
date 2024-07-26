@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        // 산술연산은 결과가 숫자 -> 끝까지 계산
+        // 3*5/17*0*33/45*96............
+        // 비교와 논리연산은 결과가 boolean(참 ,거짓) -> 결과가 판별되면 중단
+
+        const a=5;
+        const b='5';
+
+        console.log(a>b); //false
+        console.log(a>=b); //true
+        //문자와 숫자는 비교가 불가능하지만
+        //자바스크립트 해석 불가 숫자형 문자열은 멋대로 숫자열로 변경하여 읽음
+        
+        
+        // 형변환하면 같은 값이냐?
+        // 타입 무시하고 비교
+        console.log(a==b); // true
+        // 타입까지 비교
+        console.log(a===b); // false
+    </script>
+</body>
+</html>

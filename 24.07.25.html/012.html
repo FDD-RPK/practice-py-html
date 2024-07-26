@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 잡기 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        #app {
+            width: 500px;
+            margin: 0 auto;
+        }
+        header, nav, footer {
+            height: 50px;
+            align-items: center;
+        }
+        header {
+            background-color: gainsboro;
+            display: flex;
+            justify-content : center;
+            align-items: center;
+            border: 1px solid black;
+        }
+        footer {
+            background-color: gainsboro;
+            display: flex;
+            justify-content : center;
+            align-items: center;
+        }
+        aside {
+            height: 150px;
+            width: 50px;
+            background-color: cyan;
+            float: left;
+            display: flex;
+            justify-content : center;
+            align-items: center;
+        }
+        section {
+            height: 400px;
+            width: 400px;
+            border: 1px solid black;
+            float: left;
+            display: flex;
+            justify-content : center;
+            align-items: center;
+        }
+        nav {
+            background-color: red;
+            display: flex;
+            justify-content : center;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content : center;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav a {
+            color: white;
+            padding: 5px 10px;
+            transition: background-color 0.5s;
+        }
+        nav a:hover {
+            background-color: darkred;
+            border-radius: 5px;
+        }
+        main {overflow: hidden;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            대가리 영역
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">안보이는</a></li>
+                <li><a href="#">어떤내용</a></li>
+                <li><a href="#">뭐가뭔지</a></li>
+                <li><a href="#">모르겠당</a></li>
+            </ul>
+        </nav>
+        <main>
+            <aside>
+                왼쪽 친구
+            </aside>
+            <section>
+                가운데 친구
+            </section>
+            <aside>
+                오른쪽 친구
+            </aside>
+        </main>
+        <footer>
+            맨 아래 친구
+        </footer>
+    </div>
+</body>
+</html>

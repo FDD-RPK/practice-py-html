@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산수연습2</title>
+
+</head>
+<body>
+    <script>
+        //1~10사이의 짝수의 합, 홀수의 합을 구해 출력하시오
+        /* let a = 0;
+            let b = 0;
+            for(i=1;i<=10;i++) {
+            if(i%2==0) {
+                a=a+i
+            } else {
+                b=b+i
+            }
+             }
+             console.log(`짝수의 합:${a}`);
+             console.log(`홀수의 합:${b}`);
+        */
+
+        // 1-2+3-4+5-6+7-8+9-10
+        // 1. 홀수면 더하고 짝수면 뺀다
+           let hap1 = 0;
+           for (let i=1; i<=10; i++) {
+            if(i%2==0) {
+                hap1=hap1-i;
+           } else {
+                hap1=hap1+i;
+           }
+        }
+        // 2. 홀수의 합에서 짝수의 합을 뺀다
+
+           let hap2 = 0;
+           let plus = true;
+           for(let i=1;i<=10;i++) {
+            if(plus=true) {
+                hap2 = hap2+i;
+                plus = false
+           } else {
+                hap2 = hap2-i;
+                plus = true;
+           }
+        }
+        // 3. 더한다. 더했으면 다음에 빼고 뺐으면 다음에 더한다
+        let a = 0;
+        let b = 0;
+        let c;
+        for(i=0;i<=10;i++) {
+            if(i%2==0) {
+                a = a+i
+            } else {
+                b = b+i
+            }
+        }
+        c = b-a;
+        console.log(`1-2+3-4+5-6+7-8+9-10=${c}`);
+
+        // 4. (1-2)+(3-4)...(9-10) 처럼 2항을 1쌍으로 묶어 더한다
+         let hap4=0
+         for(let i=1;i<=10;i++) {
+            hap4 = hap4+i;
+            i++;
+            hap4 = hap4-i;
+         }
+         console.log(hap4);
+    </script>
+</body>
+</html>

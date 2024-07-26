@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서버 넘기기</title>
+</head>
+<body>
+    <!--
+        /ser/get2
+        username, email, irum을 넘겨라
+    -->
+
+    <form action="http://192.168.0.54:8081/server/get2" method="get">
+        <input type="text" name="username" value="유저이름">
+        <input type="email" name="email" value="이메일 주소">
+        <input type="text" name="irum" value="본인명">
+        <button>로그인</button>
+    </form>
+</body>
+</html>

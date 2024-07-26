@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문</title>
+</html>
+<body>
+    <!--
+        반복하기    
+        1. 타입
+        2. 변수
+        3. 연산 : 단항, 이항(산술, 비교, 논리), 삼항
+        4. 제어 : 반복(), 조건
+        -->
+    <script>
+        // 반복(for) : 반드시 종료되야 한다
+        // for반복문은 반복횟수를 센다
+        // for(카운터생성 ; 반복조건 ; 카운터증감)
+        for(let i=1; i<11; i++) {
+            console.log(i);
+        }
+        // 실행순서 : 1. let i=0
+        //           2. i<10?  0<10
+        //           3. console.log() 실행
+        //           4. ++i
+        //           5. i<10?  1<10 (2번 부터 반복)
+        //             ......
+        //            . i<10?  10<10 (반복종료)
+    </script>   
+</body>
+</html>
