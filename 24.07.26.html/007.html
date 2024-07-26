@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <input type="number" id="val">
+    <button onclick="add()">추가</button>
+    <button onclick="sum()">합계 출력</button>
+    <script>
+        // 배열의 원소를 추가,삭제 하기
+        // ar=array
+        // 객체를 가리키는 ar은 참조변수다(리모컨)
+        // const ar이라고 하면ar이 가리키는 객체의 값은 변경가능
+        // ar이 다른 객체를 가리키도록 할 수 없다
+        const ar=[];
+        const element = document.getElementById('val');
+        function add() {
+            ar.push(+element.value);
+            element.value = '';
+            element.focus();
+            console.log(ar);
+        }
+
+        function sum() {
+            let hap = 0;
+            for(let i=0; i<ar.length; i++) {
+                hap += ar[i];
+            }
+            console.log(`합계${hap}`);
+        }
+    </script>
+</body>
+</html>
