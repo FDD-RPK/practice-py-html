@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수와 반복문</title>
+</head>
+<body>
+    <script>
+        // 숫자를 입력받아 덧셈하는 함수
+        function sum(ar) {
+            let hap = 0;
+            for(i=0;i<ar.length;i++) {
+                hap = hap + ar[i];
+            }
+            return hap;
+        }
+        console.log(sum([12,23,34,45,56,67,78,89,100]));
+    </script>
+</body>
+</html>

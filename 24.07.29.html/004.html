@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        // 객체는 값(속성)과 함수(메소드)를 가진다
+        const today = new Date();
+        console.log(today.)
+
+
+        // JS는 모든 타입에 대해 내장 객체를 제공한다
+        let insa = 'hello';
+        const hello = new String('hello');
+
+        // 원래는 let으로 지정되면 기보타입인 insa(string)은 hello의 값을 가짐
+        // 그러므로 insa에 없는 length라는 값을 사용할 수 없어야 한다
+        // 하지만 JS가 insa에 .을 찍으면서 멋대로 type을 변경하여 객체로 만들어 버린다
+        // 올바른 표현방법인 const hello = new String('hello'); <- 참조타입의 객체
+        insa.length;            // 5
+        insa.toUpperCase();     // HELLO
+        console.log(insa);      // hello
+        console.log(insa.toUpperCase());    //HELLO
+    </script>
+</body>
+</html>

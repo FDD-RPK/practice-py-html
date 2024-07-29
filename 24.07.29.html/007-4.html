@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수로 html입력처리</title>
+</head>
+<body>
+    <input type="text" id="score">
+    <button onclick="result();">판정</button>
+    <script>
+        function result() {
+            const score3 = document.querySelector('#score');
+            console.log(score3);
+
+            const score2 = document.getElementById('score');
+            console.log(score2);
+
+            const scoreInput = document.querySelector('#score');
+            const score = scoreInput.value;
+            if (score>=70) {
+                alert('합격입니다');
+            } else {
+                alert('불합격입니다');
+            }
+        }
+    </script>
+</body>
+</html>

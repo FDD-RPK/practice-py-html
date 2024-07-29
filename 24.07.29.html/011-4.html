@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수와 배열 2</title>
+</head>
+<body>
+    <script>
+        // 숫자들을 입력받아 70보다 큰 수만 덧세하는 함수
+        function sumOf70(ar) {
+            let hap = 0;
+            for(i=0; i<ar.length; i++) {
+                if(ar[i]>=70) {
+                    hap = hap + ar[i];
+                }
+            }
+            return hap;
+        }
+        console.log(sumOf70([70,80,60]));
+    </script>
+</body>
+</html>

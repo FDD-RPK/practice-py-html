@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래밍 이론의 목표</title>
+    <!--
+        프로그래밍 이론의 목표 : 생산성
+        생산성을 높이는 가장 간단한 방법 : 코드 재사용 <- 함수
+
+        덧셈을 한 다음 console.log로 출력하는 함수
+        덧셈을 하는 함수 - 재사용 하기 더 쉬운 함수(위에꺼 보다)
+    -->
+</head>
+<body>
+    <script>
+        //함수를 정의한다
+        function insa() {
+            console.log('안녕하세요');
+        }
+        // 익명함수
+        const insa2 = function () {
+            console.log('안녕하세요');
+        }
+        // 화살표 함수(arrow function : Lambda 함수)
+        const insa3 = ()=>{
+            console.log('안녕하세요');
+        }
+        insa3();
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // panjung 함수를 메소드로
+        const saram = {
+            irum: '홍길동',
+            nai: 20,
+            panjung:function () {
+                if(this.nai>=19) {
+                console.log(`${this.irum}은 성인입니다`); // this - 객체 내부에서 메소드가 자신의 속성에
+                } else {
+                console.log(`${this.irum}은 미성년자입니다`);  //   접근하려면 반드시 ★this★가 필요하다
+                }
+            }
+        };
+        saram.panjung();
+    </script>
+</body>
+</html>
