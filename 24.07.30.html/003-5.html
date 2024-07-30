@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keydown event 3</title>
+</head>
+<body>
+    <!-- 나이를 입력받아 청소년(24세까지), 성인으로 출력하시오-->
+    <input type="number" id="nai"  placeholder="나이입력">
+    <button id="btn">입력</button>
+    <script>
+        naiInput = document.querySelector('#nai');
+        btn = document.querySelector('#btn');
+
+        naiInput.addEventListener('keydown', function(e) {
+            if(e.keyCode===13) {
+                const nai = parseInt(e.target.value);
+                if(nai>=25) {
+                    alert("성인입니다");
+                } else if(nai>=0&&nai<24) {
+                    alert("청소년입니다");
+                } else if(nai<0){
+                    alert("장난하냐?");
+                } else {
+                    alert("나이입력해라")
+                }
+            }
+        });
+        btn.addEventListener('click', function(e2) {
+            const nai = parseInt(naiInput.value);
+            if(nai>=25) {
+                    alert("성인입니다");
+                } else if(nai>=0&&nai<24) {
+                    alert("청소년입니다");
+                } else if(nai<0){
+                    alert("장난하냐?");
+                } else {
+                    alert("나이입력해라")
+                }
+        });
+
+    </script>
+</body>
+</html>

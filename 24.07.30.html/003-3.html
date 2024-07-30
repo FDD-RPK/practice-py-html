@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keydown event</title>
+</head>
+<body>
+    <input type="text" id="nai" name="nai">
+    <script>
+        // 나이를 입력한다음 ?하면 나이를 출력 : keydown
+        const nai = document.querySelector('#nai');
+            nai.addEventListener('keydown', function(e) {
+                // 이벤트가 발생한 곳 : e.target - 이벤트소스
+                // 입력한 값 : e.target.value
+                if(e.keyCode===13) {      //대분자 조심하기-ㅅㅂ것, 엔터를 눌렀을때 이벤트 발생하는 명령어
+                    console.log(e.target.value);
+                    e.target.value="";    //기존에 적은거 지우는 명령어
+                    e.target.focus();     //다시 적을수 있도록 커서올리는 명령어
+                }
+                    
+            }
+        )
+    </script>
+</body>
+</html>

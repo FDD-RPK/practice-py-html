@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <input type="number" id="nai" placeholder="나이를 입력하라">
+    <button id="btn">계산</button>
+    <script>
+        const $nai = $('#nai');
+        const $btn = $('#btn');
+        $btn.click(function() {
+            const nai = $nai.val();
+            if(nai>=25) {
+                alert('성인');
+            } else if(nai>0&&nai<25) {
+                alert('청소년');
+            } else if(nai<0) {
+                alert('이새끼가?');
+            } else {
+                alert('나이 적어라');
+            }
+        });
+    </script>
+</body>
+</html>

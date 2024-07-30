@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keydown event 2</title>
+    <h1>합격/불합격</h1>
+</head>
+<body>
+    <input type="number" id="jumsu" placeholder="점수 입력">
+    <button id="btn">판정</button>
+    <script>
+        jumsuInput = document.querySelector('#jumsu');
+        btn = document.querySelector('#btn');
+
+        jumsuInput.addEventListener('keydown', function(e) {
+            if(e.keyCode===13) {
+                const jumsu = parseInt(e.target.value);  //문자열을 숫자열로 바꾸는 명령어
+                if(jumsu>=70) {
+                    alert('합격');
+                } else {
+                    alert('불합격');
+                }
+            }
+        });
+        btn.addEventListener('click', function() {
+                const jumsu = parseInt(jumsuInput.value);
+                if(jumsu>=70) {
+                    alert('합격');
+                } else {
+                    alert('불합격');
+                }
+        });
+    </script>
+</body>
+</html>

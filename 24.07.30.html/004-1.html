@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <input type="number" id="nai" placeholder="나이를 입력하시오">
+    <button id="btn">클릭</button>
+    <script>
+        // jQuery이용
+        // 나이가 25~64면 입장료가 3000원, 기타는 무료
+        // 나이를 입력하면 입장료를 출력하시오
+        const $nai = $('#nai');
+        const $btn = $('#btn');
+        $nai.keydown(function(e) {
+            const nai = $nai.val();
+            if(e.keyCode===13) {
+                if(nai>=25 && nai<65) {
+                    alert('3000원 입니다');
+                } else if(nai>=0&&nai<25||nai>=64) {
+                    alert('무료입니다');
+                } else if(nai<0) {
+                    alert('나이를 모르시나요?')
+                } else {
+                    alert('나이를 입력하세요')
+                }
+            }
+        });
+        $btn.click(function() {
+            const nai = $nai.val();
+                if(nai>=25&&nai<64) {
+                    alert('3000원 입니다');
+                } else if(nai>=0&&nai<25||nai>=64) {
+                    alert('무료입니다');
+                } else if(nai<0) {
+                    alert('나이를 모르시나요?')
+                } else {
+                    alert('나이를 입력하세요')
+                }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+</head>
+<body>
+    <script>
+        // JS는 html에 탐재(내장)되어(enbeded) 웹 브라우저가 실행한다
+        // JS를 단독으로 실행하려면 node.js가 필요
+
+        // 성적을 입력받아 70점 이상이면 합격 아니면 불합격을 리턴하는 함수
+        function pass(score) {
+            if(score>=70) {
+                return "합격";
+            } else {
+                return "불합격";
+            }
+        }
+        console.log(pass(65));
+
+        // 익명함수(JS의 변수는 함수를 정장할 수 있다)
+        const pass2 = function (score) {
+            if(score>=70) 
+              return "합격";
+               return "불합격";
+        }
+        console.log(pass2(75));
+
+        // 화살표(arrow) 함수
+        const pass3 = (score)=>{
+            if(score>=70) 
+              return "합격";
+               return "불합격";
+        }
+        console.log(pass3(85));
+    </script>
+</body>
+</html>
