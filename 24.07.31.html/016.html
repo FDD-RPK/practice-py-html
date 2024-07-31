@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select input</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#choice').click(function() {
+                alert($('#menu').val());
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>select input</h1>
+    <select id="menu">
+        <!--
+            ★ 속성이 존재하면 적용, 그렇지 않으면 미적용 : readonly, disabled, selected, checked ★
+        -->
+        <option disabled selected>메뉴를 고르세요</option>
+        <option>짜장</option>
+        <option>짬뽕</option>
+        <option>탕수육</option>
+    </select>
+    <button id="choice">선택</button>
+</body>
+</html>

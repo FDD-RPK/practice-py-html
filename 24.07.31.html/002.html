@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display flex</title>
+    <style>
+        #flex-container>div {
+            float : left;
+            width : 100px;
+            border: 1px solid red;
+        }
+        /* flex를 이용하면 flex가 적용된 부분이 공중에 뜬 상태가 된다
+           그래서 다른 객체가 들어왔을때 block요소로서 세로 배치가 되는것 아닌
+           서로 겹치게 되는 상황이 발생하게 된다
+           이를 방지하기 위하여 clear를 해야한다(안그러면 화면 ㅈ망) */
+
+        /* clear하는 방법 1 - 부모에게 높이를 준다
+                            (clear를 했다고 보기 힘들다-간단.but자식의 높이를 알아야함) */
+        /* #flex-container {
+            height : 25px;
+        }; */
+
+        /* clear하는 방법 2 - float된 요소들의 부모에서 overflow 지정 */
+         #flex-container {
+            overflow: hidden;
+        }
+
+        /* clear하는 방법 3 : float된 요소들의 뒤에 block요소가 있을 때
+                             block요소에서 claer:both; - 가장 정석적인 방법 */
+        #flex-container {
+            clear:both;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div style="background-color: yellow; height: 30px;"></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQery 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #target {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="target"></div>
+    <button id="btn">클릭하세요</button>
+    <button id="blue">파랑으로</button>
+    <script>
+        const $btn = $('#btn');
+        $btn.click(function() {
+            alert('누구냐!');
+        })
+        const $blue = $('#blue');
+        $blue.click(function() {
+            if($('#target').css('background-color','blue')) {
+                     $('#target').css('background-color','red');
+                    } else {
+                        $('#target').css('background-color','blue');
+                    }
+        })
+    </script>
+</body>
+</html>

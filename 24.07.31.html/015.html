@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자의 제곱</title>
+    <h1>숫자의 제곱</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // 변수는 일급객체(first-class citizen)
+        // JS는 함수도 일급객체
+        // JS에서 변수가 올 수 있는 모든 곳에 함수도 올 수 있다
+        $(document).ready(function() {
+            $('#clac').click(function() {
+                // input요소의 값:val(), 기타요소의 내용:text(), css(), append()
+                const num = parseFloat($('#num').val());
+                
+                // Nan : Not a Number. 숫자로 바꿀 수 없다는 특수한 숫자값
+                if(isNaN(num)) {
+                    return alert('숫자를 입력하세요');
+                }
+                const result = num*num;
+                alert(result);
+            })
+        });
+    </script>
+</head>
+<body>
+    <input type="number" id="num">
+    <button id="clac">제곱</button>
+</body>
+</html>

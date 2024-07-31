@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQery 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #target {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="target"></div>
+        <button id="btn">클릭하세요</button>
+        <button id="blue">파랑으로</button>
+        <button id="hide">사라지기</button>
+        <button id="comeout">나타나기</button>
+        <script>
+            $('#blue').click(function() {
+                $('#target').css('background-color','blue');
+            });
+            $('#hide').click(function() {
+                $('#target').css('display','none');
+            })
+            $('#comeout').click(function() {
+                $('#target').css('display','block');
+            })
+        </script>
+</body>
+</html>

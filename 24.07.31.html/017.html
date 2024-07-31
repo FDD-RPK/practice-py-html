@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수행과제2-제곱연산 제작</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#cal').click(function() {
+                const num = parseFloat($('#num').val());
+                if (isNaN(num)) {
+                    alert('숫자를 적어야지');
+                }
+                const times = num*num;
+                $('#dis').val(times);
+            })
+        
+
+            $('#reset').click(function() {
+                $('#num').val('');
+                $('#dis').val('');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        입력 : 
+        <input type="number" id="num">
+    </div>
+    <div>
+        제곱 : 
+        <input disabled id="dis">
+    </div>
+    <button id="cal">계산하기</button>
+    <button id="reset">리셋하기</button>
+</body>
+</html>

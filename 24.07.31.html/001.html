@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 레이아웃</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #inline>div, #block>div {
+            width: 100px;
+            border:1px solid red;
+        }
+        #inline>div { display: inline;}
+    </style>
+</head>
+<body>
+    <!--
+        레이아웃 속성이 display
+        inline :  내용만큼 차지한다 -> 좌에서 우로 배치
+        block :  한줄만큼 차지한다(너비 지정시 너비만큼) -> 위에서 아래로 배치
+    -->
+    <div id="inline">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div id="block">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

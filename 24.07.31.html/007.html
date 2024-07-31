@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--
+        JQuery = 자바스크립트의 작성을 도와주는 라이브러리
+        - 라이브러리 : 함수의 집합
+        - 프레임워크 : 라이브러리 + 사용법
+    -->
+        <div id="target">우리나라</div>
+        <script>
+            const target = get.querySelector('$target');
+            console.log(target);
+
+            // jQuery로 요소를 선태갛면 html 요소 + 각종 jQuery 메소드들이 추가된다
+            const $target = $('#target');
+            console.log($target);
+
+            // jQuery 객체가 가진 html요소에 접근하는 방식
+            console.log($target[0]);
+        </script>
+</body>
+</html>

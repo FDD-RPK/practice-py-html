@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display flex</title>
+    <style>
+        /* display: flex; - 부모에서 작업하는 속성 */
+        #flex-container {
+            display: flex;
+            justify-content: center;
+        }
+        #flex-container>div {
+            width:100px;
+            height:100px;
+            border:1px solid red;
+            display: flex;
+            /* 주축방향 - 좌에서 우 */
+            justify-content: center;
+            /* 반대축 방향 - 상에서 하 */
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div style="background-color: yellow; height: 30px;"></div>
+</body>
+</html>

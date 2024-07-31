@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <ul id="target">
+
+    </ul>
+    <script>
+        const 명단= [
+            {name:"홍길동", point:10000},
+            {name:"전우치", point:10000},
+            {name:"임꺽정", point:10000},
+        ];
+        const $target = $('#target');
+
+        for(let i=0; i<명단.length; i++) {
+            const html =`
+                <li>
+                    <p>${명단[i].name}</p>
+                    <p>${명단[i].point}</p>
+                </li>
+            `;
+        $target.append(html);
+    }
+    </script>
+</body>
+</html>

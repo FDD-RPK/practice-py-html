@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQery 4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #target {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggle">토글</button>
+    <div id=target></div>
+    <script>
+        // 토글버튼을 누를 떄 마다 #target이 사라졌다, 나타났다 하도록 하여라
+        let isVisible = true;
+        const $target = $('#target');
+
+        // block -> none, none->block
+        $('#toggle').click(function() {
+          if(isVisible===true) {
+            $target.css('display','none');
+            isVisible = false;
+          } else {
+            $target.css('display','block');
+            isVisible = true;
+          } 
+        });
+
+        // boolean
+        $('#toggle').click(function() {
+            const value = $target.css('display');
+            if(value==='none') {
+                $target.css('display','block');
+            } else if(value==='block') {
+                $target.css('display', 'none');
+            }
+        })
+        
+    </script>
+</body>
+</html>

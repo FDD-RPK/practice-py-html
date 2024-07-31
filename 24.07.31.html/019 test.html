@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수행과제 3 - 계산기 만들기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* 필요에 따라 스타일 추가 */
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#cal').click(function() {
+                // 입력값 가져오기
+                const num1 = parseFloat($('#num1').val());
+                const num2 = parseFloat($('#num2').val());
+                const sel = $('#sel').val();
+                
+                // 입력값 검증
+                if (isNaN(num1) || isNaN(num2)) {
+                    return alert('숫자를 입력하세요');
+                }
+                
+                // 연산 및 결과 계산
+                let result;
+                if (sel === 'add') {
+                    result = num1 + num2;
+                } else if (sel === 'st') {
+                    result = num1 - num2;
+                } else if (sel === 'mp') {
+                    result = num1 * num2;
+                } else if (sel === 'dvs') {
+                    if (num2 === 0) {
+                        return alert('0으로 나눌 수 없습니다.');
+                    }
+                    result = num1 / num2;
+                } else {
+                    return alert('연산자를 선택하세요');
+                }
+                
+                // 결과를 결과 입력 필드에 표시
+                $('#result').val(result);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>계산기</h1>
+    <input type="number" id="num1" placeholder="숫자 1">
+    <select id="sel">
+        <option value="" disabled selected>연산선택</option>
+        <option value="add">+</option>
+        <option value="st">-</option>
+        <option value="mp">*</option>
+        <option value="dvs">/</option>
+    </select>
+    <input type="number" id="num2" placeholder="숫자 2">
+    = 
+    <input disabled id="result" placeholder="결과">
+    <button id="cal">계산</button>
+</body>
+</html>

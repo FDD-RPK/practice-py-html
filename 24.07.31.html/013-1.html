@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="append">추가</button>
+    <ul id="target">
+        <li>원래부터 있던 놈</li>
+    </ul>
+    <script>
+        // css, text, 이벤트처리 함수
+        // append : 마지막에 추가하는 함수
+        const $append = $('#append');
+        const $target = $('#target');
+       
+        $append.click(function() {
+            $target.append('<li>지금 붙은 놈</li>');
+        });
+    </script>
+</body>
+</html>

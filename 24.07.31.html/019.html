@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수행과제 3 - 계산기 만들기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--
+         숫자값을 입력하여 사칙연산을 만들어라
+         +인경우, 아님 -인경우, 아님 *인경우, 아님 /인경우
+    -->
+    <style>
+
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#cal').click(function() {
+                const $num1 = parseFloat($('#num1').val());
+                const $num2 = parseFloat($('#num2').val());
+                const sel = $('#sel').val();
+                    if(isNaN(num1) || isNaN(num2)) {
+                    return alert('숫자를 입력하세요');
+                    }
+                    let result;
+                    if(sel === 'add') {
+                        result = num1 + num2;
+                    } else if (sel === 'st') {
+                        result = num1 - num2;
+                    } else if (sel === 'mp') {
+                        result = num1 * num2;
+                    } else if (sel === 'dvs') {
+                        reusult = num1 / num2;
+                    }
+                $('#result').val(result);
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>계산기</h1>
+    <input type="number" id="num1">
+    <select id="sel">
+        <option value="selector" disabled selected>연산선택</option>
+        <option value="add">+</option>
+        <option value="st">-</option>
+        <option value="mp">*</option>
+        <option value="dvs">/</option>
+    </select>
+    <input type="number" id="num2">
+     = 
+    <input disabled id="result" placeholder="결과">
+    <button id='cal'>계산</button>
+</body>
+</html>

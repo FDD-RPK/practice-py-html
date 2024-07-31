@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="target">Hello Javascript</div>
+    <script>
+        // parameter가 없으면 불러들이고 parameter가 있으면 그대로 쓴다
+        
+        const $target = $('#target');
+        // 요소가 가진 내용 : text()
+        console.log($target.text());
+        $target.text('Hellow jQery')
+
+        // 스타일 : css()
+        console.log($target.css('color'));
+        $target.css('color','red');
+
+        // 글자색은 흰색, 배경은 deepink, 내용은 안녕하세요 -> 메소드 chaining
+        $target.css('color','white').css('background-color','deeppink').text('안녕하세요');
+    </script>
+</body>
+</html>
