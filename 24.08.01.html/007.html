@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지스크립트 4-TLqkf</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #app { width: 640px; margin: 0 auto;}
+        #circle>div {
+            width: 40px;
+            height: 40px;
+            background-color: lightgray;
+            border-radius: 20px;
+            margin: 0 10px;
+            display: inline-block;
+        }
+        #circle{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        #circle .check{
+            background-color: darkgray;
+        }
+        #arrowbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 640px;
+            height: 223.99px;
+        }
+        #arrowbox>div {
+            position: absolute;
+            background-color: lightgray;
+            width: 30px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 800;
+        }
+        #left {
+            left: 0px;
+        }
+        #right {
+            right: 0px;
+        }
+        #img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    </style>
+    <script>
+    $(document).ready(function() {
+    const images = [];
+        images[0] = 'https://www.w3schools.com/howto/img_woods_wide.jpg';
+        images[1] = 'https://www.w3schools.com/howto/img_5terre_wide.jpg';
+        images[2] = 'https://www.w3schools.com/howto/img_mountains_wide.jpg';
+        images[3] = 'https://www.w3schools.com/howto/img_snow_wide.jpg';
+        
+        const $img = $('#img');
+        function init() {
+            $img.attr('src', images[0]);
+        }
+        init();
+
+        $('#circle>div').click(function() {
+            $('#circle>div').removeClass('check');
+            $(this).addClass('check');
+            const index = $(this).data('index');
+            $img.attr('src', images[index]);
+        })
+
+    })
+    </script>
+</head>
+<body>
+<div id="app">
+    <div id="arrowbox">
+        <img id="img">
+        <div id="left">←</div>
+        <div id="right">→</div>
+    </div>
+    <div id="checkbox">
+        <div id="circle">
+            <div class="check" data-index="0"></div>
+            <div data-index="1"></div>
+            <div data-index="2"></div>
+            <div data-index="3"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

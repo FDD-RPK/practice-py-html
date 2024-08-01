@@ -29,7 +29,12 @@
                     } else if (sel === 'mp') {
                         result = num1 * num2;
                     } else if (sel === 'dvs') {
+                        if (num2 === 0) {
+                        return alert ('0으로는 나눌 수 없다');
+                        }    
                         reusult = num1 / num2;
+                    } else {
+                        return alert('연산자를 선택하세요');
                     }
                 $('#result').val(result);
             })
@@ -40,7 +45,7 @@
     <h1>계산기</h1>
     <input type="number" id="num1">
     <select id="sel">
-        <option value="selector" disabled selected>연산선택</option>
+        <option value="" disabled selected>연산선택</option>
         <option value="add">+</option>
         <option value="st">-</option>
         <option value="mp">*</option>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수행과제4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function() {
+            const taller = parseFloat($('#taller').val());
+            const weight = parseFloat($('#weight').val());
+                if(isNaN(taller) || isNaN(weight)) {
+                  return alert('갑을 제대로 입력하세요');
+                }
+                if(taller<=0 || weight<=0) {
+                    return alert('아직 태어나지 않으셨군요')
+                }
+                const bmi = weight/((taller/100)**2);
+                alert(`BMI: ${bmi.toFixed(2)}`);
+            });
+        });
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>bmi계산기</legend>
+        <label>신장</label>
+        <input type="number" id="taller" placeholder="cm">
+        <label>체중</label>
+        <input type="number" id="weight" placeholder="kg">
+        <button id="btn">계산</button>
+    </fieldset>
+</body>
+</html>

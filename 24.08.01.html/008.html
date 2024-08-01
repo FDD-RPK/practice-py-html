@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <p id="target1">Hello</p>
+    <p id="target2">Hello</p>
+    <div id="container">
+    </div>
+    <script>
+        // 값을 읽어오는 메소드 : getter, 값을 쓰는 메소드 : setter
+        // jQery 메소드는 파라미터가 없으면 게터, 파라미터가 있으면 세터로 동작
+
+        // 2. text()는 html 태그를 단순히 글자로 취급. html() 메소드는 html 태그를 적용한다
+        //  $('#target1').text('<script>alert();<script>');
+        //  $('#target2').html('<script>alert();<script>'); // 이렇게 사용하면 ㅈ망할수도 있음
+
+        // 3. css()
+
+        // 4. val()
+
+        // 5. append(), appendTo()
+        //    자식.appendTo(부보)        return 자식
+        //    부모.append(자식)          return 부모
+        
+        // const html = `<p><b>우리나라</b></p>`;
+        // $('#container').append(html);
+
+        const $p = $('<p>').appendTo($('$container'));
+        $('<b>우리나라</b>').appendTo($p);
+    </Script>
+</body>
+</html>

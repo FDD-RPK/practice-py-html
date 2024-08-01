@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image 스크립트 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+         $(document).ready(function() {
+        const images = [];
+        images[0] = 'https://www.w3schools.com/howto/img_woods_wide.jpg';
+        images[1] = 'https://www.w3schools.com/howto/img_5terre_wide.jpg';
+        images[2] = 'https://www.w3schools.com/howto/img_mountains_wide.jpg';
+        images[3] = 'https://www.w3schools.com/howto/img_snow_wide.jpg';
+
+       
+          const $img = $('#img');
+            function init() {
+                $img.attr('src', images[0]);
+            }
+            init();
+
+            $('#lower>div').click(function() {
+            $('#lower>div').removeClass('choice');
+            $(this).addClass('choice');
+            const index = $(this).data('index');
+            $img.attr('src', images[index]);
+        });
+        })
+</script>
+    <style>
+        #lower {
+            display: flex;
+            justify-content: center;
+        }
+        #lower>div {
+            height: 40px;
+            width: 40px;
+            border-radius: 20px;
+            background-color: lightgray;
+            margin: 0 10px;
+        }
+
+        #lower .choice {
+            background-color: darkgray;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="upper">
+            <div>왼쪽</div>
+            <img id="img">
+            <div>오른쪽</div>
+        </div>
+        <div id="lower">
+            <!-- 태그에 값을 저장할 때 'data-' 속성을 사용한다 -->
+            <div class="choice" data-index="0"></div>
+            <div data-index="1"></div>
+            <div data-index="2"></div>
+            <div data-index="3"></div>
+        </div>
+    </div>
+</body>
+</html>

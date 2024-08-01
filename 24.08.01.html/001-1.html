@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // 1. 버튼을 클릭하면 선택한 월을 콘솔에 출력하시오
+        $(document).ready(function() {
+            $('#btn').click(function() {
+                const month = $('#month').val();
+                if (month === '1m') {
+                    return alert('1월입니다');
+                } else if (month === '2m') {
+                    return alert('2월입니다');
+                }
+            })
+        })
+
+
+        // - 이벤트 발생 : 버튼 -> select
+        // - 어떤 이벤트
+        //   버튼 : select에서 선택하고 버튼을 클릭
+        //   select로 직접 처리하겠다 -> change이벤트
+     </script>
+</head>
+<body>
+    <!-- select에 1월부터 12월까지 나타나도록 하여라 -->
+     <select id="month">
+        <option value="1m">1월</option>
+        <option value="2m">2월</option>
+     </select>
+     <button id="btn">선택</button>
+</body>
+</html>

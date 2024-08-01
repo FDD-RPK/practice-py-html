@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image 스크립트 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+            // 이벤트함수, text, css, attr, append, val()
+            const images = [];
+            images[0] = 'https://www.w3schools.com/howto/img_woods_wide.jpg';
+            images[1] = 'https://www.w3schools.com/howto/img_5terre_wide.jpg';
+            images[2] = 'https://www.w3schools.com/howto/img_mountains_wide.jpg';
+            images[3] = 'https://www.w3schools.com/howto/img_snow_wide.jpg';
+    </script>
+    <style>
+        #circle>div {
+            width: 40px;
+            height : 40px;
+            border-radius: 20px;
+            background-color: lightgray;
+            margin: 0 5px;
+        }
+        #circle {
+            display: flex;
+            justify-content: center;           
+        }
+        .choice {
+          background-color: darkgray;  
+        }
+        .not-choice {
+            background-color: lightgray;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="cross">
+            <div>왼쪽</div>
+            <img>
+            <div>오른쪽</div>
+        </div>
+        <div id="circle">
+            <div class="sc choice"></div>
+            <div class="sc not-choice"></div>
+            <div class="sc not-choice"></div>
+            <div class="sc not-choice"></div>
+        </div>
+    </div>
+    <script>
+        // 여러 요소를 선택해서 이벤트 헨들러를 지정할 때 구체적으로 이벤트가 발생한 곳은 $(this)로 접근
+        $('.sc').click(function() {
+            // attr로 속성을 변경
+            // addClass : 클래스를 추가
+            // removeClass : 클래스를 제거
+            $('.sc').css('background-color', 'lightgray');
+            $(this).css('background-color', 'darkgray');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const $month = $('#month');
+            const $choice = $('#choice');
+
+            // 이벤트가 발생한 지점을 이벤트 핸들러 내부에서 this로 접근할 수 있다
+            // 모든 객체는 this(I=나 자신)를 가진다 <- this가 I를 의미한다 질문은 거절한다
+            $month.change(function() {
+                console.log($(this).val()); // this를 $(this)로 하지 않는경우 에러가 나온다
+            });
+
+            $choice.click(function() {
+                console.log($month.val());
+            })
+        })
+    </script>
+</head>
+<body>
+    <select id="month">
+        <option>1월</option>
+        <option>2월</option>
+    </select>
+    <button id="choice">선택</button>
+</body>
+</html>

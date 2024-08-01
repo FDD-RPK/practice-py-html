@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagination</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container mt-3">
+    
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">이전으로</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">다음으로</a></li>
+    </ul>
+    <hr>
+    <ul class="pagination" id="p"></ul>
+</div>
+<script>
+    $(document).ready(function() {
+        const page = { prev: 0, start: 1, end: 3, next: 4, current: 2 };
+        const $p = $('#p');
+
+        if (page.prev > 0) {
+            $p.append(`<li class="page-item"><a class="page-link" href="${page.prev}">이전으로</a></li>`);
+        }
+
+        for (let i = page.start; i <= page.end; i++) {
+            if (i === page.current) {
+                $p.append(`<li class="page-item active"><a class="page-link" href="${i}">${i}</a></li>`);
+            } else {
+                $p.append(`<li class="page-item"><a class="page-link" href="${i}">${i}</a></li>`);
+            }
+        }
+
+        if (page.next > 0) {
+            $p.append(`<li class="page-item"><a class="page-link" href="${page.next}">다음으로</a></li>`);
+        }
+    });
+</script>
+</body>
+</html>
