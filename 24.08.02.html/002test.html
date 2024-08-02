@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 의존한다(dependency) -->
+    <style>
+        .toggle .delete { width: 100px; }
+        #app {
+            width: 800px;
+            margin: 10px auto 0;
+            box-shadow: 0 0 10px rgba(200, 200, 200, 0.5);
+            padding: 10px;
+        }
+        .finish { text-decoration: line-through; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="mb-5">
+            <div class="mb-3 mt-3"> <!-- marginbottom-3, margintop-3 -->
+                <label for="title" class="form-label">너가 할일 :</label>
+                <input type="text" class="form-control" id="title" placeholder="할일입력" name="title">
+            </div>
+            <div class="d-grid mb-3">
+                <button type="button" class="btn btn-primary btn-block" id="addTodo">할일 추가</button>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <colgroup> <!-- table 아래의 th들이 속하는 각자의 비율을 조정(width면 가로축) -->
+                <col width="13%">
+                <col width="13%">
+                <col width="40%">
+                <col width="20%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>할일</th>
+                    <th>작성일</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const $tbody = $('#tbody');
+        const todos = [
+            { tno: 1, title: '자바공부', writeday: new Date().toLocaleString(), finish: true },
+            { tno: 2, title: '영어공부', writeday: new Date().toLocaleString(), finish: false },
+        ];
+        let tno = 3;
+
+        function printTodos() {
+            $tbody.empty();
+            for (const t of todos) {
+                const html = `
+                <tr>
+                    <td>${t.tno}</td>
+                    <td class='${t.finish ? 'finish' : ''}'>${t.title}</td>
+                    <td>${t.writeday}</td>
+                    <td>
+                        <button class='btn btn-primary toggle' data-tno='${t.tno}'>
+                            ${t.finish ? '작업중' : '완료'}
+                        </button>
+                        <button class='btn btn-danger delete' data-tno='${t.tno}'>삭제</button>
+                    </td>
+                </tr>
+                `;
+                $tbody.append(html);
+            }
+        }
+
+        // 페이지 로드 시 이벤트 핸들러 설정
+        $('#addTodo').click(function() {
+            const $title = $('#title');
+            if ($title.val() === '') {
+                alert('할일을 입력하세요');
+                return;
+            }
+            const newTodo = { tno: tno++, title: $title.val(), writeday: new Date().toLocaleString(), finish: false };
+            todos.push(newTodo);
+            $title.val('');
+            printTodos();
+        });
+
+        // 이벤트 핸들러를 페이지 로드 시 설정
+        $tbody.on('click', '.toggle', function() {
+            const tno = $(this).data('tno');
+            for (const t of todos) {
+                if (t.tno === tno) {
+                    t.finish = !t.finish;
+                }
+            }
+            printTodos();
+        });
+
+        $tbody.on('click', '.delete', function() {
+            const tno = $(this).data('tno');
+            for (let i = 0; i < todos.length; i++) {
+                if (todos[i].tno === tno) {
+                    todos.splice(i, 1);
+                    break;
+                }
+            }
+            printTodos();
+        });
+
+        printTodos();
+    </script>
+</body>
+</html>
