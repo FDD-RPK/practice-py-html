@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Nanum+Gothic&display=swap');
+/* 웹폰트를 cdn방식을 사용하여 윈도우에서 불러들여 사용하에게 볼 수 있게 하는 방식 */
+/* 폰트 이름에 띄어쓰기, 특수문자인 경우 ""(따옴표) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#app {
+    margin: 0 auto;
+    width: 1000px;
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.5);
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+header {
+    border: 1px solid red;
+    width: 1000px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav {
+    border: 1px solid orange;
+    width: 1000px;
+    height: 50px;
+    display: flex;
+    justify-content: left;           
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    line-height: 50px;
+    width: 100px;
+}
+nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+nav a:hover {
+    background-color: blueviolet;
+    color: white;
+}
+footer {
+    border: 1px solid red;
+    width: 1000px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    width: 1000px;
+    height: 600px;
+    display: flex;
+}
+#left, #right {
+    width: 100px;
+    height: 200px;
+    background-color: lightgray;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 0;
+    /* flex 배치할 때 내용의 너비를 무시해라 */
+    flex-grow: 1;
+}
+#mid {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    min-height: 600px;
+    flex-grow: 6;
+    border: 1px solid deepskyblue;
+}
+.finish {
+    text-decoration: line-through;
+}
