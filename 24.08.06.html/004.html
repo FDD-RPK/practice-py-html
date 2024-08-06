@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주소 보내기 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--
+        서버주소 : http://192.168.0.54:8081/mvc/sum2
+        파라미터 : a b c 숫자 3개의 합산
+    -->
+</body>
+    <form action="http://192.168.0.54:8081/mvc/sum2" method="get" id="myform">
+        <input type="number" name="a" id="a">
+        <input type="number" name="b" id="b">
+        <input type="number" name="c" id="c">
+        <button type="button" onclick="check()">합산</button>
+        <!--
+             form안에 있는 button은 submit으로 작동한다
+             type을 지정하지 않으면 script에서 return을 걸어도 실행된다.
+        -->
+    </form>
+    <script>
+        function check() {
+            const a = $('#a').val();
+            const b = $('#b').val();
+            const c = $('#c').val();
+            if(a=='' || b=='' || c=='') {
+                alert('숫자들을 모두 입력하세요');
+                return false;
+            }
+            $('#myform').submit();
+        }
+
+    </script>
+</html>

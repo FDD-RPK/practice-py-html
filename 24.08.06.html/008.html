@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응답 표준</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--
+        MVC - 백이 화면을 프론트에게 보내주는 legacy(하지만 이해와 작성이 쉽다-초보자용)
+              web, android, iphone등 다양한 프론트에 호환되는 각각의 서버를 만들어야함
+              하나의 회사가 동일 이벤트와 관련된 행사를 진행할 시 각 서버간 싱크가 맞아야
+              사용중 충돌이 없다 - legacy(과거의 유산=구 시대적인)한 이유
+        REST - 
+        
+        공개 API - 사용할 수 있도록 공개되어있는 정보
+    -->
+    <!--
+        요청(request) 표준 : urlencoded
+        응답 산업표준 : JSON - 자바스크립트 객체를 문자열로 표현하는 약속
+    -->
+    <script>
+        const obj = {
+            irum : '홍길동',
+            nai : 20,
+            birthday : {
+                year:2000,
+                month:11,
+                day:8
+            }
+        };
+        // JS 객체를 JSON으로 변환
+        const jsonString = JSON.stringify(obj);
+        console.log(jsonString);
+        // JSON을 객체로 변환
+        const obj2 = JSON.parse(jsonString);
+        console.log(obj2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★★★★★★★★★서버로 보내기 4 - 'rest' 방식으로 서버에 보내기★★★★★★★★★</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <h1>★★★★★★<br>
+        서버로 보내기 4<br>
+        'rest' 방식으로 서버에 보내기<br>
+        ★★★★★★</h1>
+</head>
+<body>
+    첫번째 숫자 : <input type="text" id="a"><br>
+    두번째 숫자 : <input type="text" id="b"><br>
+    <button id="add">더하기</button>
+    <hr>
+    <div>덧셈 결과 : <span id="result"></span></div>
+    <script>
+        $('#add').click(function() {
+            const a = $('#a').val();
+            const b = $('#b').val();
+            $.ajax({
+                url : 'http://192.168.0.54:8081/rest/sum1',
+                data : `a=${a}&b=${b}`,
+                success:function(result) {
+                    $('#result').text(result);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

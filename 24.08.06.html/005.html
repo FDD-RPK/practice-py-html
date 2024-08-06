@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서버로 보내기3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--
+        서버주소 : http://192.168.0.54:8081/mvc/user
+        irum        text
+        birthday    date
+        둘 모두 입력했으면 서버로 전송
+    -->
+    <form action="http://192.168.0.54:8081/mvc/user" method="get" id="mybirthday">
+        <input type="text" id="irum" name="irum">
+        <input type="date" id="birthday" name="birthday">
+        <button type="button" onclick="check()">입력</button>
+    </form>
+    <script>
+        function check() {
+            const irum = $('#irum').val();
+            const birthday = $('#birthday').val();
+            if(irum === '' || birthday === '') {
+                alert('이름과 날짜를 올바르게 입력하세요')
+                return false;
+            }
+            $('#mybirthday').submit();
+        }
+    </script>
+</body>
+</html>

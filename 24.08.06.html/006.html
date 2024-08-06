@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서버로 보내기 - rest요청</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--
+        ajax : 화면을 부분갱신하는 '기술'
+        rest : ajax를 이용해서 웹, 앱을 개발하는 '방식'
+        spa : 앱 전체가 하나의 '페이지'
+        http://192.168.0.54:8081/rest/name에 요청
+        username이란 이름으로 이름을 넘김 -> 이름을 돌려보낸다
+
+        ★callback★ : 작성된 함수를 타인에 의해 사용되도록 요청 -> 언제 실행될지 모를때 이용
+
+        $.ajax({
+            url:..........
+            method:..........
+            data:............
+            contentType:.........
+            processData:.........
+            success:function().........
+            error:function()............
+            의 방식으로 작성된다.
+        })
+    -->
+        <script>
+            $.ajax({
+                url : 'http://192.168.0.54:8081/rest/name',
+                data : 'username=spring',
+                success:function() {
+                    console.log('서버의 응답');
+                }
+            });
+            for(let i=1; i<=100000; i++) {
+                console.log(i);
+            };
+        </script>
+</body>
+</html>
