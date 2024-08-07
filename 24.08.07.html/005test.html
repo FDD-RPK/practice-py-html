@@ -1,0 +1,25 @@
+<script>
+    const page = 1;
+    const pagesize = 10;
+    const pagesPerBlock = 5;
+    
+    $.ajax({
+        url:`https://sample.bmaster.kro.kr/contacts?pageno=1&pagesize=${pagesize}`,
+            success:function(result) {
+                console.log(result);
+                totalcount = result.totalcount;
+               // literal : 코드가 값이 그냥 적혀있는 것
+               const countOfPage = Math.floor(totalcount/pagesize)+1;
+               for(let i=128; i<=132; i++) {
+                    if(i%10 == 0) {
+                    p=Math.floor(i/10);
+                    console.log(`${i} : ${p}`);
+                    } else {
+                    p=Math.floor(i/10)+1;
+                    console.log(`${i} : ${p}`);
+                    }
+                }
+            }
+    });
+
+</script>

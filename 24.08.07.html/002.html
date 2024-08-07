@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼을 통한 날짜 변경</title>
+    <!--
+        1. 전날을 누르면 전날로 이동
+        2. 다음날을 누르면 다음날로 이동
+        3. 어제 날짜를 넘어가면 날짜 변경 불가
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.12/dayjs.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <button onclick="prev()">전날</button>
+    <button onclick="next()">다음날</button>
+    <script>
+        // 더 이상 증가할 수 없는 날짜 한계(어제 날짜)
+        const today = dayjs().subtract(1, "day");
+        let currentDay = today;
+        console.log(today.format("YYYYMMDD"));
+        
+        function prev() {
+            currentDay = currentDay.subtract(1, "day");
+            console.log(currentDay.format("YYYYMMDD"));
+        };
+
+        function next() {
+            const diff = currentDay.diff(today, "day");
+            if(diff>=0) {
+                return;
+            };
+            currentDay = currentDay.add(1, "day");
+            console.log(currentDay.format("YYYYMMDD"));
+
+        };
+    </script>   
+</body>
+</html>
