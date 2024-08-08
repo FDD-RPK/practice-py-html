@@ -22,7 +22,7 @@
     const pagesPerBlock = 5;
     
     $.ajax({
-        url:`https://sample.bmaster.kro.kr/contacts?pageno=6&pagesize=${pagesize}`,
+        url:`https://sample.bmaster.kro.kr/contacts`,
             success:function(result) {
                 // ES6 구조분해할당을 이용해 result.pageno, result.totalcount, result.contacts를
                 // pageno, totalcount, contacts에 한방에 꺼내자
@@ -47,21 +47,21 @@
       const $pagination = $('.pagination');
       if(prev>0) {
         const html = `
-        <li class="page-item"><a class="page-link" href="${prev}">이전으로</a></li>
+        <li class="page-item"><a class="page-link" href="list.html?pageno=${prev}">이전으로</a></li>
         `;
         $pagination.append(html);
       }
       for(let i=start; i<=end; i++) {
         if(i==pageno) {
-           const html = `<li class="page-item active"><a class="page-link" href="${i}">${i}</a></li>`
+           const html = `<li class="page-item active"><a class="page-link" href="list.html?pageno=${i}">${i}</a></li>`
            $pagination.append(html);
         } else {
-           const html = `<li class="page-item"><a class="page-link" href="${i}">${i}</a></li>`
+           const html = `<li class="page-item"><a class="page-link" href="list.html?pageno=${i}">${i}</a></li>`
            $pagination.append(html);
         }
       }
       if(next>0) {
-        const html = `<li class="page-item"><a class="page-link" href="${next}">다음으로</a></li>`
+        const html = `<li class="page-item"><a class="page-link" href="list.html?pageno=${next}">다음으로</a></li>`
         $pagination.append(html);
       }
     }

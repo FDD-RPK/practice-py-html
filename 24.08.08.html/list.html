@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paging</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>주소</th>
+                <th>연락처</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <ul class="pagination">
+    </ul>
+    <script>
+        const url = 'https://sample.bmaster.kro.kr/contacts';
+        const pagesize = 10;
+        let pageno = location.search.substr(8);
+        if(pageno=="")
+            pageno="1";
+
+        function printContacts(contacts) {
+                const $tbody = $('#tbody');
+                $tbody.empty()
+                for(const c of contacts) {
+                const link = `read.html?no=${c.no}`
+                const row = `
+                <tr>
+                    <td><a href=${link}>${c.name}</a></td>
+                    <td>${c.address}</td>
+                    <td>${c.tel}</td>    
+                </tr>
+                `;
+                $tbody.append(row);
+            }
+        }
+
+        function calcPagination({totalcount}) {
+            const contactsPerPage = 10;
+            const pagesPerBlock = 5;
+            const numberOfPages = (Math.ceil(totalcount/contactsPerPage));
+            const prev = ((Math.ceil(pageno/pagesPerBlock))-1)*contactsPerPage;
+            const start = prev + 1;
+            let end = prev + 5;
+            let next = end + 1;
+
+            // 3번째 블록일 경우 prev : 10, start : 11, end : 15, next : 16이 나온다
+            // 그런데 총 페이지수가 14라면 end는 14로, next는 0으로
+            if(end>=numberOfPages) {
+                end = numberOfPages;
+                next = 0;
+            }
+            return{prev, start, end, next}
+        }
+
+        function printPagination({prev, start, end, next}) {
+            const $pagination = $('.pagination');
+            if(prev>0) {
+                const prevPage = `<li class="page-item"><a class="page-link" href="list.html?pageno=${prev}">이전으로</a></li>`
+                $pagination.append(prevPage);
+            }
+            for( let i=start; i<=end; i++) {
+                if(pageno==i) {
+                const page = `<li class="page-item"><a class="page-link active" href="list.html?pageno=${i}">${i}</a></li>`
+                $pagination.append(page);
+                } else {
+                const page = `<li class="page-item"><a class="page-link" href="list.html?pageno=${i}">${i}</a></li>`
+                $pagination.append(page);
+                }
+            }       
+            if(next>0) {
+                const nextPage = `<li class="page-item"><a class="page-link" href="list.html?pageno=${next}">다음으로</a></li>`
+                $pagination.append(nextPage);
+            }
+        }
+
+        async function fetchApi() {
+            // 구조분해할당 : 변수들을 모아서 객체를 쉽게, 객체를 변수들로 쉽게 풀어헤치기
+            // {pageno:pageno, pagesize:pagesize}
+            const data = {pageno, pagesize};
+            // 비동기 작업의 결과는 현재 알 수 없다 -> 미래에 값이 도착할 것이다 -> Promise
+            try {
+                // result 는 totlacount, pageno, pagesize, contacts로 구성되어있다
+                // result = {totalcount, pageno, pagesize, contacts
+                const result = await $.ajax({url, data});  
+                printContacts(result.contacts);        
+                const pagination = calcPagination(result);
+                printPagination(pagination);                   
+            } catch(error) {        // success 영역
+                console.log(error);
+            }
+        }
+        fetchApi();
+    </script>
+</body>
+</html>
+ 
+<!--
+function fetchApi(pagesize, pageno) {
+            $.ajax({
+            url,
+             구조분해할당 : 이름과 값이 같은경우 하나로 축약가능
+                           ex) pagesize:pagesize -> pagesize
+            data: {pagesize, pageno},
+            success(result) {
+            }
+            })
+        } */
+
+        /* const a = $.ajax(사용여부); <- 동기 형식의 문장은 바로 실행해야 한다.
+                                         $.ajax는 비동기 형식이라서 해당코드는 성립 불가
+           const a = ★wait★ $.ajax(사용여부); <- 대기 문장을 넣어 비동기 코드를 동기로
+                                                  바꿔준다
+                                                  * wait은 함수async안에서 작동한다
+
+        */
+
+        구조분해 할당 : 변수들을 모아서 객체를 만든다
+        const a = 10;
+        const b = 20;
+        const obj = {a,b};
+
+        구조분해할당 : 객체를 변수들로 분해한다
+        const obj2 = {irum:'홍길동', nai:20};
+        const {irum, nai} = obj2
+
+        result의 구조분해할당
+        $.ajax에서 result의 값은 pageno, pagesize, contacts, totalcount가있다
+        함수로 불러올때 reusult는 전부, result.pageno는 직접꺼내기 이다
+        따라서 
+        printContacts(result.pageno) 이면 함수를 정의할때
+            function printContacts(pageno)로 표현이 가능하며
+        printContacts(result) 이면 result값중에서 필요한 것을 꺼내야 하기에
+            funciton printContacts({pageno, totalcount, ....})
+            또는
+            function printContacts({pageno}) 
+        등 원하는 정보를 중괄호 안에 작성해야 한다
+-->
