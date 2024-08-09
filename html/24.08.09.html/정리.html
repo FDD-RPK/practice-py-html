@@ -1,0 +1,105 @@
+1. metadata
+    - 데이터를 설명하는 데이터
+    - ex) 문서의 구조, 영화의 자막, 옷의 태그....
+
+2. 마크업 언어
+    - 정보(메타데이터)를 텍스트로 표현하기 위한 언어
+    - 왜? 특정 문서 포맷을 사용할 수 없으니까
+
+3. 
+<saram>
+    <irum>홍길동</irum>
+    <nai>20</nai>
+</saram>
+
+JSON : {'irum':'홍길동', 'nai':20}
+
+urlencoded 형식 : ?irum=홍길동&nai=20 -> get방식의 경우 주소창에 나타난다(querystring)
+
+JS   : {irum:'홍길동', nai:20}
+python : {'irum':'홍길동', 'nai':20}
+
+3. 마크업 문서는 요소(element)의 집합
+   요소는 <시작태그>내용</닫는태그>
+
+
+
+5. display : flex inline block inline-block none
+    - inline : width는 내용의 너비만큼 차지
+    - block : 부모의 100%
+
+    - display-none : 사라진다
+    - visibility-hidden : 보이지않는다
+
+    - flex : 부모 내에서 주축방향으로 배치(flex direction : row column - 주축의 방향 지정)
+             주축방향 배치 방법 : justify-contents  ┐
+                                                  justify-contents가 기능이 좀 더 많음                           
+             반대축방향 배치 방법 : align-items     ┘
+
+6. semantic markup - head, nav, main, section, article, aside, tbody, thead, tfoot....
+    - 의미가 있는 요소를 정확히 사용하는 마크업
+
+7. position : fixed static absolute relative
+                - 기본값 : static(움직이지 않음)
+                - relative : 요소 자신의 위치 기준으로 이동. 요소가 원래 있던 위치는 비워둠
+                - absolute : 부모(relatvie) 기준으로 이동. 요소가 있던 자리는 채워진다
+                - 결론 : 요소를 임의의 위치에 있게하려면 부모는 relative, 요소는 absolute
+
+8. get과 post
+    ※ 상태 : 저장된 정보
+    - get : 서버의 상태가 바뀌지 않는다 -> 여러번 실행해도 안전(safe) -> cRud
+            서버로 넘기는 데이터가 주소표시줄을 이용(querystring) -> 즐겨찾기
+    - post : 서버의 상태가 바뀐다 -> 재실행 불가능 해야한다 -> CrUD
+            서버로 넘기는 데이터가 보이지 않는다
+
+9. put? patch? delete?
+    - 서버로 넘기는 방식이 다양하게 있었으나 get, post만 이용되었다
+    - REST 방식을 만든 로이필딩이 '메소드를 이용해 주소를 간다하게 만들자' 생각
+           get / contacts                전체읽기             /contacts/list
+           get / contacts / 123          123번 읽기           /contact/read
+           post / contacts               create              /contact/add 
+           patch / contacts / 123        123번 부분변경       /contact/modify
+           put / contacts / 123          123번 전체변경       /contact/update
+           delete / contacts / 123       123번 삭제           /contact/delete
+
+10. type
+    - 강타입언어 : 타입을 항상 지정
+    - 약타입언어 : 타입이 언제든지 바뀐다
+
+    기본타입 : 값을 저장한다
+              js가 객체를 찍어내는 틀(class)을 제공 - 내장객체
+              js는 기본타입에 대해 내장 객체를 제공 -> .찍으면 내장객체로 형변환한다
+    - number
+    - string
+    - boolean
+    - undefined : 값이 없다 -> 타입을 알 수 없다
+                    java의 경우 boolean a;
+    참조타입 : 값을 가진 객체를 가리킨다
+    - object
+    const ar = [10,20,30];
+    console.log(typeof ar);       // object
+
+    const date = new Date();
+    console.log(typeof date);     // object
+
+11. 속성과 method
+    - 속성(attribute) : html 태그의 속성, JS 객체의 속성
+    - css 속성은 property *{ ＊margin＊(<- 이부분이 property) : 0;}
+
+    - 객체에 소속된 변수 : 속성
+    - 객체에 소속된 함수 : method
+
+    즉
+        함수는 메소드다 : 거짓
+        메소드는 함수다 : 참
+
+        const saram = {
+            irum : '홍길동',
+            nai : 20,
+            sogae:function () {
+                console.log(this.irum);
+            },
+            success() {
+                console.log(this.nai);
+            },
+        }
