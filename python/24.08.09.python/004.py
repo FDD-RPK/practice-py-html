@@ -9,4 +9,4 @@
 # 반지름을 입력받아 원의 면적을 출력하시오
 radius = float(input('반지름을 입력하세요 : '))
 area = radius*radius*3.14
-print(f'반지름 {radius}원의 면적 : {area}')
+print(f'반지름 {radius} 원의 면적 : {area}')
