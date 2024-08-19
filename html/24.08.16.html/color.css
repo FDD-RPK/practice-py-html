@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header, nav, footer {
+    margin: 0 auto;
+    width: 1000px;
+    height: 50px;
+}
+header, footer {
+    border: 2px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav {
+    border: 1px solid skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    margin: 0 auto;
+    display: flex;
+    width: 1000px;
+    justify-content: center;
+}
+aside {
+    height: 200px;
+    border: 1px solid purple;
+    flex-basis: 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    height: 800px;
+    flex-basis: 0;
+    flex-grow: 6;
+    background-color: lightgray;
+    padding: 10px;
+}
