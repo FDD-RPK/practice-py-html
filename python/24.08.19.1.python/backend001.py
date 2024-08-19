@@ -11,7 +11,7 @@ import flask
 app = flask.Flask(__name__)
 
 # 001.html을 출력할 함수를 만들고 사용자가 호출할 url을 지정한다
-# annotaion - 주소를 지정
+# annotaion - 주소를 지정(@로 시작한다)
 # annotation을 요청하면 그거에따른 함수를 만들어 준다
 @app.route("/")
 def index():

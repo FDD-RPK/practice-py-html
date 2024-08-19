@@ -15,3 +15,7 @@ def ccc() :
     return flask.render_template('hoby.html')
 
 app.run(debug=True, port=8081)
+
+
+# library 기능의 집합
+# framework library+사용법
